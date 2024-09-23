@@ -27,8 +27,8 @@ func Login(ctx *gin.Context) {
 	}
 
 	http.SetCookie(ctx.Writer, &http.Cookie{
-		Name:     user.FirstName,
-		Value:    user.ID,
+		Name:     getUser.Email,
+		Value:    user.FirstName,
 		Path:     "/",
 		HttpOnly: true, // Helps prevent XSS
 		Secure:   true, // Use only if using HTTPS
