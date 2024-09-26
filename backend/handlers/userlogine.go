@@ -8,6 +8,7 @@ import (
 )
 
 func Login(ctx *gin.Context) {
+	
 	var getUser model.User
 	err := ctx.BindJSON(&getUser)
 
@@ -26,6 +27,7 @@ func Login(ctx *gin.Context) {
 		return
 	}
 
+
 	http.SetCookie(ctx.Writer, &http.Cookie{
 		Name:     user.ID + user.FirstName,
 		Value:    user.FirstName,
@@ -35,6 +37,7 @@ func Login(ctx *gin.Context) {
 		SameSite: http.SameSiteLaxMode,
 		MaxAge:   3600,
 	})
+
 	ctx.JSON(200, gin.H{"message": "logine succefully",
 		"welcome": user.FirstName,
 		"id":      user.ID,

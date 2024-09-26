@@ -49,19 +49,15 @@ const Logine = ({setIsLogged}) => {
         withCredentials: true,
       });
       console.log("Response", res.data);
-    
       toast.success(`Login successful: ${res.data.welcome}`); 
       if(res.data.welcome){
         localStorage.setItem("id",res.data?.id+res.data?.welcome)
         setIsLogged(localStorage.getItem("id"))
         navigate('/')
       }
-    } catch (err) {
-    
+    } catch (err) { 
     toast.error(err.response?.data || "An error occurred"); 
     }
-
-   
   }
 
   return (

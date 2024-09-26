@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"errors"
-
 	"main.go/model"
 )
 
