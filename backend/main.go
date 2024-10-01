@@ -25,7 +25,7 @@ func main() {
 	server.POST("/login", handlers.Login)
 	server.POST("/register", handlers.Register)
 	server.POST("/logout", handlers.Logout)
-	
+
 	server.Run(":8080")
 
 }
